@@ -1,26 +1,35 @@
-# ¿§¤ò»ÈÍÑ½ÐÍè¤ë¤è¤¦¤Ë¤¹¤ë
+# è‰²ã‚’ä½¿ç”¨å‡ºæ¥ã‚‹ã‚ˆã†ã«ã™ã‚‹
 autoload -Uz colors
 colors
 ### Ls Color ###
-# ¿§¤ÎÀßÄê
+# è‰²ã®è¨­å®š
 export LSCOLORS=Exfxcxdxbxegedabagacad
-# Êä´°»þ¤Î¿§¤ÎÀßÄê
+# è£œå®Œæ™‚ã®è‰²ã®è¨­å®š
 export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-# ZLS_COLORS¤È¤Ï¡©
+# ZLS_COLORSã¨ã¯ï¼Ÿ
 export ZLS_COLORS=$LS_COLORS
-# ls¥³¥Þ¥ó¥É»þ¡¢¼«Æ°¤Ç¿§¤¬¤Ä¤¯(ls -G¤Î¤è¤¦¤Ê¤â¤Î¡©)
+# lsã‚³ãƒžãƒ³ãƒ‰æ™‚ã€è‡ªå‹•ã§è‰²ãŒã¤ã(ls -Gã®ã‚ˆã†ãªã‚‚ã®ï¼Ÿ)
 export CLICOLOR=true
-# Êä´°¸õÊä¤Ë¿§¤òÉÕ¤±¤ë
+# è£œå®Œå€™è£œã«è‰²ã‚’ä»˜ã‘ã‚‹
 zstyle ':completion:*:default' menu select=1
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 
-autoload -U compinit; compinit # Êä´°µ¡Ç½¤òÍ­¸ú¤Ë¤¹¤ë
-setopt auto_list               # Êä´°¸õÊä¤ò°ìÍ÷¤ÇÉ½¼¨¤¹¤ë(d)
-setopt auto_menu               # Êä´°¥­¡¼Ï¢ÂÇ¤ÇÊä´°¸õÊä¤ò½ç¤ËÉ½¼¨¤¹¤ë(d)
-setopt list_packed             # Êä´°¸õÊä¤ò¤Ç¤­¤ë¤À¤±µÍ¤á¤ÆÉ½¼¨¤¹¤ë
-setopt list_types              # Êä´°¸õÊä¤Ë¥Õ¥¡¥¤¥ë¤Î¼ïÎà¤âÉ½¼¨¤¹¤ë
-bindkey "^[[Z" reverse-menu-complete  # Shift-Tab¤ÇÊä´°¸õÊä¤òµÕ½ç¤¹¤ë("\e[Z"¤Ç¤âÆ°ºî¤¹¤ë)
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # Êä´°»þ¤ËÂçÊ¸»ú¾®Ê¸»ú¤ò¶èÊÌ¤·¤Ê¤¤
+alias ls='ls -v'
+
+# è£œå®Œæ©Ÿèƒ½ã‚’æœ‰åŠ¹ã«ã™ã‚‹
+autoload -U compinit; compinit
+# è£œå®Œå€™è£œã‚’ä¸€è¦§ã§è¡¨ç¤ºã™ã‚‹(d)
+setopt auto_list
+# è£œå®Œã‚­ãƒ¼é€£æ‰“ã§è£œå®Œå€™è£œã‚’é †ã«è¡¨ç¤ºã™ã‚‹(d)
+setopt auto_menu
+# è£œå®Œå€™è£œã‚’ã§ãã‚‹ã ã‘è©°ã‚ã¦è¡¨ç¤ºã™ã‚‹
+setopt list_packed
+# è£œå®Œå€™è£œã«ãƒ•ã‚¡ã‚¤ãƒ«ã®ç¨®é¡žã‚‚è¡¨ç¤ºã™ã‚‹
+setopt list_types
+# Shift-Tabã§è£œå®Œå€™è£œã‚’é€†é †ã™ã‚‹("\e[Z"ã§ã‚‚å‹•ä½œã™ã‚‹)
+bindkey "^[[Z" reverse-menu-complete
+# è£œå®Œæ™‚ã«å¤§æ–‡å­—å°æ–‡å­—ã‚’åŒºåˆ¥ã—ãªã„
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 #PROMPT
 setopt prompt_subst
@@ -29,39 +38,42 @@ RPROMPT="%{${fg[green]}%}[%~]%{${reset_color}%}"
 HOSTNAME=`hostname`
 PROMPT="[%{${fg[red]}%}%*%{${reset_color}%}] %n@%{${fg[yellow]}%}${HOSTNAME}%{${reset_color}%}$ "
 
-# ¥Ò¥¹¥È¥ê¤ÎÀßÄê
+# ãƒ’ã‚¹ãƒˆãƒªã®è¨­å®š
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
-# Æ±¤¸¥³¥Þ¥ó¥É¤ò¥Ò¥¹¥È¥ê¤Ë»Ä¤µ¤Ê¤¤
+# åŒã˜ã‚³ãƒžãƒ³ãƒ‰ã‚’ãƒ’ã‚¹ãƒˆãƒªã«æ®‹ã•ãªã„
 setopt hist_ignore_all_dups
-# ¥Ò¥¹¥È¥ê¥Õ¥¡¥¤¥ë¤ËÊÝÂ¸¤¹¤ë¤È¤­¡¢¤¹¤Ç¤Ë½ÅÊ£¤·¤¿¥³¥Þ¥ó¥É¤¬¤¢¤Ã¤¿¤é¸Å¤¤Êý¤òºï½ü¤¹¤ë
+# ãƒ’ã‚¹ãƒˆãƒªãƒ•ã‚¡ã‚¤ãƒ«ã«ä¿å­˜ã™ã‚‹ã¨ãã€ã™ã§ã«é‡è¤‡ã—ãŸã‚³ãƒžãƒ³ãƒ‰ãŒã‚ã£ãŸã‚‰å¤ã„æ–¹ã‚’å‰Šé™¤ã™ã‚‹
 setopt hist_save_nodups
-# ¥¹¥Ú¡¼¥¹¤«¤é»Ï¤Þ¤ë¥³¥Þ¥ó¥É¹Ô¤Ï¥Ò¥¹¥È¥ê¤Ë»Ä¤µ¤Ê¤¤
+# ã‚¹ãƒšãƒ¼ã‚¹ã‹ã‚‰å§‹ã¾ã‚‹ã‚³ãƒžãƒ³ãƒ‰è¡Œã¯ãƒ’ã‚¹ãƒˆãƒªã«æ®‹ã•ãªã„
 setopt hist_ignore_space
-# ¥Ò¥¹¥È¥ê¤ËÊÝÂ¸¤¹¤ë¤È¤­¤ËÍ¾Ê¬¤Ê¥¹¥Ú¡¼¥¹¤òºï½ü¤¹¤ë
+# ãƒ’ã‚¹ãƒˆãƒªã«ä¿å­˜ã™ã‚‹ã¨ãã«ä½™åˆ†ãªã‚¹ãƒšãƒ¼ã‚¹ã‚’å‰Šé™¤ã™ã‚‹
 setopt hist_reduce_blanks
 
-# Ã±¸ì°ÜÆ°
+# å˜èªžç§»å‹•
 bindkey "^F" forward-word
 bindkey '^B' backward-word
 
-# ¹âµ¡Ç½¤Ê¥ï¥¤¥ë¥É¥«¡¼¥ÉÅ¸³«¤ò»ÈÍÑ¤¹¤ë
+# é«˜æ©Ÿèƒ½ãªãƒ¯ã‚¤ãƒ«ãƒ‰ã‚«ãƒ¼ãƒ‰å±•é–‹ã‚’ä½¿ç”¨ã™ã‚‹
 setopt extended_glob
 
-# ´Ä¶­ÊÑ¿ô
-export LANG=ja_JP.eucJP
+# ç’°å¢ƒå¤‰æ•°
+export LANG=ja_JP.utf8
+export LESSCHARSET=utf-8
 
-# ÆüËÜ¸ì¥Õ¥¡¥¤¥ëÌ¾¤òÉ½¼¨²ÄÇ½¤Ë¤¹¤ë
+# æ—¥æœ¬èªžãƒ•ã‚¡ã‚¤ãƒ«åã‚’è¡¨ç¤ºå¯èƒ½ã«ã™ã‚‹
 setopt print_eight_bit
 
-# '#' °Ê¹ß¤ò¥³¥á¥ó¥È¤È¤·¤Æ°·¤¦
+# '#' ä»¥é™ã‚’ã‚³ãƒ¡ãƒ³ãƒˆã¨ã—ã¦æ‰±ã†
 setopt interactive_comments
 
-# ¥Ç¥£¥ì¥¯¥È¥êÌ¾¤À¤±¤Çcd¤¹¤ë
+# ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªåã ã‘ã§cdã™ã‚‹
 setopt auto_cd
 
-# ^R ¤ÇÍúÎò¸¡º÷¤ò¤¹¤ë¤È¤­¤Ë¥ï¥¤¥ë¥É¥«¡¼¥É¤ò»ÈÍÑ½ÐÍè¤ë¤è¤¦¤Ë¤¹¤ë
+# ^R ã§å±¥æ­´æ¤œç´¢ã‚’ã™ã‚‹ã¨ãã«ãƒ¯ã‚¤ãƒ«ãƒ‰ã‚«ãƒ¼ãƒ‰ã‚’ä½¿ç”¨å‡ºæ¥ã‚‹ã‚ˆã†ã«ã™ã‚‹
 bindkey '^R' history-incremental-pattern-search-backward
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # vim:set ft=zsh :

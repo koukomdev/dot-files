@@ -1,0 +1,17 @@
+[user]
+    name = Koji Komiya
+    email = koukomdev@gmail.com
+[core]
+    editor = vim -c \"set fenc=utf-8\"
+    pager = lv -c
+[color]
+    ui = true
+[alias]
+    co = checkout
+    st = status
+    ci = commit
+    df = diff
+    br = branch
+    ad = add
+    lo = log
+    ps = push

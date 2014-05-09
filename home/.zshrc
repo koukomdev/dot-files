@@ -61,6 +61,7 @@ setopt extended_glob
 # 環境変数
 export LANG=ja_JP.utf8
 export LESSCHARSET=utf-8
+export LC_ALL=$LANG
 
 # 日本語ファイル名を表示可能にする
 setopt print_eight_bit

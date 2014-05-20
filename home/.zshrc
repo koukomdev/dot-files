@@ -35,12 +35,14 @@ colors
 setopt prompt_subst
 case ${UID} in
 0)
+    PROMPT="[%{${fg[red]}%}%*%{${reset_color}%}] %n@%{${fg[yellow]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]')$ "
     RPROMPT="%{${fg[green]}%}[%~]%{${reset_color}%}"
     SPROMPT="%B%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%}%b "
     [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
         PROMPT="[%{${fg[red]}%}%*%{${reset_color}%}] %n@%{${fg[yellow]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]')$ "
     ;;
 *)
+    PROMPT="[%{${fg[red]}%}%*%{${reset_color}%}] %n@%{${fg[yellow]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]')$ "
     RPROMPT="%{${fg[green]}%}[%~]%{${reset_color}%}"
     SPROMPT="%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
     [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&

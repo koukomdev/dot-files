@@ -110,13 +110,13 @@ set fileencoding=utf-8
 """ unite.vim
 " unite prefix key
 nnoremap [unite] <Nop>
-nmap <C-u>[unite]
+nmap <Space>u [unite]
 
 let g:unite_source_history_yank_enable =1 "history/yankの有効化
 let g:unite_cursor_line_highlight = 'TabLineSel' "highlight color
 
 " unite mappings
-nnoremap <silent> [unite]<C-u> :<C-u>Unite -buffer-name=files buffer file_mru bookmark file<CR>
+nnoremap <silent> [unite]u :<C-u>Unite -buffer-name=files buffer file_mru bookmark file<CR>
 nnoremap [unite]f :<C-u>Unite file file/new<CR>
 nnoremap [unite]b :<C-u>Unite buffer tab<CR>
 nnoremap [unite]t :<C-u>Unite tab<CR>
@@ -129,25 +129,6 @@ nnoremap [unite]r :<C-u>UniteResume<CR>
 nnoremap [unite]bd :<C-u>UniteWithBufferDir file file/new<CR>
 nnoremap [unite]cd :<C-u>UniteWithCurrentDir file file/new<CR>
 nnoremap <expr> [unite]% ':<C-u>Unite file file/new -input=' . expand('%:p') . '<CR>'
-
-"uniteを開いている間のキーマッピング
-"autocmd FileType unite call s:unite_my_settings()
-"function! s:unite_my_settings()"{{{
-""ESCでuniteを終了
-nmap <buffer> <ESC> <Plug>(unite_exit)
-nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
-inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
-"入力モードのときjjでノーマルモードに移動
-"imap <buffer> jj <Plug>(unite_insert_leave)
-""入力モードのときctrl+wでバックスラッシュも削除
-imap <buffer> <C-w> <Plug>(unite_delete_backward_path)
-""ctrl+vで横に分割して開く
-nnoremap <silent> <buffer> <expr> <C-v> unite#do_action('vsplit')
-inoremap <silent> <buffer> <expr> <C-v> unite#do_action('vsplit')
-""ctrl+tで新しいタブで開く
-nnoremap <silent> <buffer> <expr> <C-t> unite#do_action('tabopen')
-inoremap <silent> <buffer> <expr> <C-t> unite#do_action('tabopen')
-"endfunction"}}}
 
 " for operator replace
 map _ <Plug>(operator-replace)

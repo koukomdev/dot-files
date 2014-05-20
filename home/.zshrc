@@ -5,8 +5,8 @@
 # Env
 #
 source /etc/profile
-source ~/.nvm/nvm.sh
-nvm use v0.10.25
+#source ~/.nvm/nvm.sh
+#nvm use v0.10.25
 
 #
 # LANG

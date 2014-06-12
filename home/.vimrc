@@ -256,8 +256,8 @@ map M <Plug>(operator-mdurlp)
 " indent 2 when ruby
 augroup WriteRuby
     autocmd!
-    au Filetype ruby setlocal tabstop=2
-    au Filetype ruby setlocal shiftwidth=2
+    au Filetype ruby,scss setlocal tabstop=2
+    au Filetype ruby,scss setlocal shiftwidth=2
 augroup END
 
 " tcomment: go...toggle, gO...force comment out
@@ -265,3 +265,7 @@ if neobundle#tap('tcomment_vim') " {{{
   let g:tcommentMapLeaderOp1='go'
   let g:tcommentMapLeaderOp2='gO'
 end "}}}
+
+" status line.
+set laststatus=2
+set statusline=%<%f\%m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%4v\%l/%L

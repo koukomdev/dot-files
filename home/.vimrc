@@ -256,8 +256,8 @@ map M <Plug>(operator-mdurlp)
 " indent 2 when ruby
 augroup WriteRuby
     autocmd!
-    au Filetype ruby,scss,slim setlocal tabstop=2
-    au Filetype ruby,scss,slim setlocal shiftwidth=2
+    au Filetype ruby,stylesheet,html,javascript,eruby,haml setlocal tabstop=2
+    au Filetype ruby,stylesheet,html,javascript,eruby,haml setlocal shiftwidth=2
 augroup END
 
 " tcomment: go...toggle, gO...force comment out

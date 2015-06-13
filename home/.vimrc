@@ -154,39 +154,42 @@ filetype off
 if has('vim_starting')
   set runtimepath+=~/.vim/neobundle.vim.git
 
-  call neobundle#rc(expand('~/.bundle'))
+  call neobundle#begin(expand('~/.vim/bundle/'))
+  NeoBundleFetch 'Shougo/neobundle.vim'
+
+  " GitHubから取得する場合
+  " NeoBundle 'ユーザ名/リポジトリ名'
+  NeoBundle 'Shougo/unite.vim'
+  NeoBundle 'Shougo/vimproc'
+  NeoBundle 'hotchpotch/perldoc-vim'
+  NeoBundle 'thinca/vim-ref'
+  NeoBundle 'thinca/vim-textobj-between.git'
+  NeoBundle 'kana/vim-textobj-user'
+  NeoBundle 'kana/vim-operator-user'
+  NeoBundle 'kana/vim-operator-replace'
+  NeoBundle 'h1mesuke/vim-alignta.git'
+  NeoBundle 'h1mesuke/textobj-wiw.git'
+  NeoBundle 'vimtaku/vim-textobj-sigil'
+  NeoBundle 'nakatakeshi/jump2pm.vim.git'
+  NeoBundle 'thinca/vim-quickrun'
+  NeoBundle 'tpope/vim-repeat'
+  NeoBundle 'mattn/vim-textobj-url'
+  NeoBundle 'vimtaku/vim-operator-mdurl'
+  NeoBundle 'kannokanno/previm'
+  NeoBundle 'Shougo/neomru.vim'
+  NeoBundle 'tomtom/tcomment_vim'
+
+  " vim-scripts 上のリポジトリから取得する場合
+  " NeoBundle 'スクリプト名'
+  NeoBundle 'surround.vim'
+  NeoBundle 'sudo.vim'
+  NeoBundle 'open-browser.vim'
+
+  " それ以外のgitリポジトリから取得する場合
+  " NeoBundle 'git://URI'
+
+  call neobundle#end()
 endif
-
-" GitHubから取得する場合
-" NeoBundle 'ユーザ名/リポジトリ名'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc'
-NeoBundle 'hotchpotch/perldoc-vim'
-NeoBundle 'thinca/vim-ref'
-NeoBundle 'thinca/vim-textobj-between.git'
-NeoBundle 'kana/vim-textobj-user'
-NeoBundle 'kana/vim-operator-user'
-NeoBundle 'kana/vim-operator-replace'
-NeoBundle 'h1mesuke/vim-alignta.git'
-NeoBundle 'h1mesuke/textobj-wiw.git'
-NeoBundle 'vimtaku/vim-textobj-sigil'
-NeoBundle 'nakatakeshi/jump2pm.vim.git'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'mattn/vim-textobj-url'
-NeoBundle 'vimtaku/vim-operator-mdurl'
-NeoBundle 'kannokanno/previm'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'tomtom/tcomment_vim'
-
-" vim-scripts 上のリポジトリから取得する場合
-" NeoBundle 'スクリプト名'
-NeoBundle 'surround.vim'
-NeoBundle 'sudo.vim'
-NeoBundle 'open-browser.vim'
-
-" それ以外のgitリポジトリから取得する場合
-" NeoBundle 'git://URI'
 
 filetype plugin on
 filetype indent on

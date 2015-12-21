@@ -99,6 +99,8 @@ noremap zd zo
 noremap zs zR
 noremap zx zM
 
+noremap ag Ag
+
 " color scheme
 colorscheme slate
 
@@ -184,6 +186,7 @@ if has('vim_starting')
   NeoBundle 'surround.vim'
   NeoBundle 'sudo.vim'
   NeoBundle 'open-browser.vim'
+  NeoBundle 'rking/ag.vim'
 
   " それ以外のgitリポジトリから取得する場合
   " NeoBundle 'git://URI'

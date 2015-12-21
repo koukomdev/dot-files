@@ -99,7 +99,7 @@ noremap zd zo
 noremap zs zR
 noremap zx zM
 
-noremap ag Ag
+cnoremap ag Ag
 
 " color scheme
 colorscheme slate

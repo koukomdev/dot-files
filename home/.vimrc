@@ -131,6 +131,14 @@ nnoremap [unite]r :<C-u>UniteResume<CR>
 nnoremap [unite]bd :<C-u>UniteWithBufferDir file file/new<CR>
 nnoremap [unite]cd :<C-u>UniteWithCurrentDir file file/new<CR>
 nnoremap <expr> [unite]% ':<C-u>Unite file file/new -input=' . expand('%:p') . '<CR>'
+nnoremap [unite]g :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+
+" unite grep に ag(The Silver Searcher) を使う
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+endif
 
 " for operator replace
 map _ <Plug>(operator-replace)

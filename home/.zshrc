@@ -5,8 +5,6 @@
 # Env
 #
 source /etc/profile
-#source ~/.nvm/nvm.sh
-#nvm use v0.10.25
 
 #
 # LANG
@@ -306,3 +304,8 @@ ssh_agent_init
 [ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+export EDITOR=vim
+eval "$(direnv hook zsh)"

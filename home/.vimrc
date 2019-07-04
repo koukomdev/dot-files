@@ -170,7 +170,6 @@ if has('vim_starting')
   " GitHubから取得する場合
   " NeoBundle 'ユーザ名/リポジトリ名'
   NeoBundle 'Shougo/unite.vim'
-  NeoBundle 'Shougo/vimproc'
   NeoBundle 'hotchpotch/perldoc-vim'
   NeoBundle 'thinca/vim-ref'
   NeoBundle 'thinca/vim-textobj-between.git'
@@ -276,7 +275,7 @@ augroup END
 
 " tcomment: go...toggle, gO...force comment out
 if neobundle#tap('tcomment_vim') " {{{
-  let g:tcommentMapLeaderOp1='go'
+  let g:tcomment_opleader1='go'
   let g:tcommentMapLeaderOp2='gO'
 end "}}}
 

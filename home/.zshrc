@@ -220,7 +220,7 @@ darwin*)
 freebsd*)
     case ${UID} in
     0)
-        updateports()
+        function updateports()
         {
             if [ -f /usr/ports/.portsnap.INDEX ]
             then
@@ -276,7 +276,7 @@ esac
 
 # for ssh-agent with screen/tmux
 #
-ssh_agent_init() {
+function ssh_agent_init() {
     AGENT="$HOME/tmp/ssh-agent-$USER"
 
     if [ -S "$SSH_AUTH_SOCK" ]; then
@@ -291,7 +291,7 @@ ssh_agent_init() {
     fi
 }
 
-ssh() {
+function ssh() {
     ssh_agent_init
 
     /usr/bin/ssh "$@"
@@ -308,4 +308,3 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 export EDITOR=vim
-eval "$(direnv hook zsh)"

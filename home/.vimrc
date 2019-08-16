@@ -187,6 +187,7 @@ if has('vim_starting')
   NeoBundle 'kannokanno/previm'
   NeoBundle 'Shougo/neomru.vim'
   NeoBundle 'tomtom/tcomment_vim'
+  NeoBundle 'leafgarland/typescript-vim'
 
   " vim-scripts 上のリポジトリから取得する場合
   " NeoBundle 'スクリプト名'

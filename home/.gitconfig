@@ -3,7 +3,8 @@
     email = koukomdev@gmail.com
 [core]
     editor = vim -c \"set fenc=utf-8\"
-    pager = lv -c
+    pager = less
+    excludesfile = /Users/koji.komiya/.gitignore_global
 [color]
     ui = true
 [alias]
@@ -15,3 +16,9 @@
     ad = add
     lo = log
     ps = push
+[difftool "sourcetree"]
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path =
+[mergetool "sourcetree"]
+    cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
